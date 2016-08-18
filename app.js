@@ -12,11 +12,13 @@ function genRandom() {
 function compMoves() {
 	if (comMovePos1 === comMovePos2) {
 		$result.innerHTML = 'Draw';
+	} else if ((comMovePos1 - comMovePos2) === -2) {
+		$result.innerHTML = 'Player Two Won!';
 	} else if ((comMovePos1 - comMovePos2) % 2 === 0 || (comMovePos1 - comMovePos2) % 2 === -1) {
 		$result.innerHTML = 'Player One Won!';
-	} else if ((comMovePos1 - comMovePos2) % 2 === 1) {
+	} /*else if ((comMovePos1 - comMovePos2) % 2 === 1) {
 		$result.innerHTML = 'Player Two Won!';
-	} else {
+	}*/ else {
 		$result.innerHTML = 'Player Two Won!';
 	};
 	console.log(comMovePos1, comMovePos2);
