@@ -1,20 +1,42 @@
 var _moves = ['Rock', 'Scissors', 'Paper'];
-var _movesNumber = _moves.length;
+var _movesLength = _moves.length;
+var comMovePos1;
+var comMovePos2;
+var $result = document.getElementById('result');
 
-document.getElemtById('player1').clcik
 
-function comMove() {
-	var comMovePos = Math.floor(Math.random() * 3);
-	return _moves[comMovePos];
-}
+function genRandom() {	
+	return Math.floor(Math.random() * _movesLength);
+};
 
 function compMoves() {
-	var comMove1 = comMove();
-	var comMove2 = comMove();
-	if (comMove1 === comMove2) {
-		document.getElemtById('result').innerHtml('Draw')
+	if (comMovePos1 === comMovePos2) {
+		$result.innerHTML = 'Draw';
+	} else if ((comMovePos1 - comMovePos2) % 2 === 0 || (comMovePos1 - comMovePos2) % 2 === -1) {
+		$result.innerHTML = 'Player One Won!';
+	} else if ((comMovePos1 - comMovePos2) % 2 === 1) {
+		$result.innerHTML = 'Player Two Won!';
+	} else {
+		$result.innerHTML = 'Player Two Won!';
 	};
-	console.log (comMove1);
-	console.log (comMove2);
+	console.log(comMovePos1, comMovePos2);
 };
+
+
+document.getElementById('player1').onclick = function() {
+	comMovePos1 = genRandom();
+	document.getElementById('player1Move').innerHTML = _moves[comMovePos1];
+	if (comMovePos2 !== null && comMovePos2 !== undefined) {
+		compMoves();
+	};
+};
+
+document.getElementById('player2').onclick = function() {
+	comMovePos2 = genRandom();
+	document.getElementById('player2Move').innerHTML = _moves[comMovePos2];
+	if (comMovePos1 !== null && comMovePos1 !== undefined) {
+		compMoves();
+	};
+};
+
 
