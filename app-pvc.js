@@ -28,7 +28,6 @@ document.getElementById('player2').onclick = function() {
 	'use strict';
 	var $seletedOption = document.getElementById('player1Move').selectedIndex;
 	$player1Move = Number(document.getElementsByTagName('option')[$seletedOption].value);
-	console.log($seletedOption, $player1Move, comMovePos2);
 
 	if ($player1Move === -1) {
 		$result.innerHTML = 'Please make your move!';

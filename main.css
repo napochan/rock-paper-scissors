@@ -1,6 +1,26 @@
 body {
-  background-color: green; }
-  body h1 {
-    color: white; }
-
+  background-color: green; 
+  font: 16px/1.5 arial, sans-serif;
+  color: #fff;
+}
+h2, p {
+  margin: 0 0 10px;
+}
+.wrapper {
+  width: 90%;
+  margin: 20px auto;
+}
+a, a:hover, a:link, a:visited, a:focus {
+  color: #fff;
+}
+.mode {
+  display: block;
+  width: 40%;
+  display: block;
+  margin: 0 0 20px 0;
+}
+.player-box {
+  margin: 0 0 30px 0;
+  min-height: 110px;
+}
 /*# sourceMappingURL=main.css.map*/

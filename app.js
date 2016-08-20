@@ -21,7 +21,6 @@ function compMoves() {
 	} else {
 		$result.innerHTML = 'Player Two Won!';
 	}
-	//console.log(comMovePos1, comMovePos2);
 }
 
 // Computer player 1
